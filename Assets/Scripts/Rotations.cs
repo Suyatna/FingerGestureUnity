@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections;
 using UnityEngine;
@@ -20,10 +21,25 @@ public class Rotations : MonoBehaviour
         trigger = false;
         var localEulerAngles = transform.localEulerAngles;
         target = Quaternion.Euler(localEulerAngles.x, localEulerAngles.y, localEulerAngles.z);
+=======
+﻿using UnityEngine;
+
+public class Rotations : MonoBehaviour
+{
+
+    private GameObject obj;
+    private int angle;
+    private bool n, e, s, w;
+
+    private void Awake()
+    {
+        obj = this.gameObject;
+>>>>>>> 2641dfec2f924a6e63cf98701e31dcb47c16d77c
     }
 
     private void Update()
     {
+<<<<<<< HEAD
         if (trigger)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * 10);
@@ -64,5 +80,14 @@ public class Rotations : MonoBehaviour
             target = Quaternion.Euler(localEuler.x + xAngles , 0, 0);
         }
         
+=======
+        
+    }
+
+    public void DoRotation(int angle)
+    {
+        this.angle = angle;
+        obj.transform.Rotate(0, angle, 0);
+>>>>>>> 2641dfec2f924a6e63cf98701e31dcb47c16d77c
     }
 }
